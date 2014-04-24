@@ -6,14 +6,18 @@ fancy_echo() {
   printf "\n%b\n" "$1"
 }
 
-fancy_echo "Installing i3 ..."
+i3_ok=$(dpkg-query -W --showformat='${Status}\n' i3 | grep "install ok installed")
 
-sudo sh -c "echo 'deb http://debian.sur5r.net/i3/ $(lsb_release -c -s) universe' >> /etc/apt/sources.list"
-sudo apt-get -y update
-sudo apt-get -y --allow-unauthenticated install sur5r-keyring
-sudo apt-get -y update
-sudo apt-get -y install i3
+if [ "" == $i3_ok ];
+then
+  fancy_echo "Installing i3 ..."
 
+  sudo sh -c "echo 'deb http://debian.sur5r.net/i3/ $(lsb_release -c -s) universe' >> /etc/apt/sources.list"
+  sudo apt-get -y update
+  sudo apt-get -y --allow-unauthenticated install sur5r-keyring
+  sudo apt-get -y update
+  sudo apt-get -y install i3
+fi
 
 if [ -d "$HOME/.i3" ]
 then
