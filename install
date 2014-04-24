@@ -21,4 +21,12 @@ then
   mv ~/.i3 ~/.i3.backup
 fi
 
+if [ -f "$HOME/.i3status.conf" ]
+then
+  fancy_echo "i3status.conf already exist. Saving a copy ..."
+  mv ~/.i3status.conf ~/.i3status.conf.backup
+fi
+
 git clone https://github.com/alfredormz/i3-config.git ~/.i3
+
+ln -s ~/.i3/i3status.conf ~/.i3status.conf
