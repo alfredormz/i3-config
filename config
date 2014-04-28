@@ -136,3 +136,13 @@ bindsym $mod+r mode "resize"
 bar {
         status_command i3status
 }
+
+# some gnome helpers
+exec --no-startup-id /usr/lib/gnome-settings-daemon/gnome-settings-daemon
+exec --no-startup-id /usr/lib/gnome-settings-daemon/gnome-fallback-mount-helper
+exec --no-startup-id /usr/lib/fingerprint-gui/fingerprint-polkit-agent -d
+exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+exec --no-startup-id nm-applet
+exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+exec xcompmgr
+
