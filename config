@@ -152,3 +152,4 @@ exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec xcompmgr
 
 exec dropbox start
+exec --no-startup-id feh --bg-fill /home/alfredormz/Dropbox/wallpapers/Forever_by_Shady_S.jpg
