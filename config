@@ -142,6 +142,9 @@ bar {
   }
 }
 
+setxkbmap -layout en,es
+setxkbmap -option 'grp:ctrl_alt_toggle'
+
 # some gnome helpers
 exec --no-startup-id /usr/lib/gnome-settings-daemon/gnome-settings-daemon
 exec --no-startup-id /usr/lib/gnome-settings-daemon/gnome-fallback-mount-helper
@@ -151,5 +154,16 @@ exec --no-startup-id nm-applet
 exec --no-startup-id gnome-sound-applet
 exec xcompmgr
 
+assign [class="[sS]kype"] 9
+assign [class="[sS]potify"] 8
+assign [class="chrome"] 1
+assign [class="hipchat.bin"] 3
+
+#for_window [class="^Spotify$"] floating enable
+
 exec dropbox start
-exec --no-startup-id feh --bg-fill /home/alfredormz/Dropbox/wallpapers/Forever_by_Shady_S.jpg
+#xrandr --output LVDS1 --off
+exec xrandr --output VGA1  --auto --above LVDS1
+exec xrandr --output LVDS1 --auto --below VGA1
+
+#exec feh --bg-fill /home/alfredormz/Dropbox/wallpapers/Forever_by_Shady_S.jpg
