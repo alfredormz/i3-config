@@ -16,7 +16,7 @@ bindsym $mod+Shift+q kill
 bindsym Control+space exec dmenu_run
 
 bindsym Control+Shift+1 [class="^.*"] border toggle
-for_window [class="^.*"] border pixel 1
+for_window [class="^.*"] border pixel 0
 
 # change focus
 bindsym $mod+j focus left
@@ -60,7 +60,7 @@ bindsym $mod+e layout toggle split
 bindsym $mod+Shift+space floating toggle
 
 # change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
+#bindsym $mod+space focus mode_toggle
 
 # focus the parent container
 bindsym $mod+a focus parent
@@ -142,9 +142,6 @@ bar {
   }
 }
 
-setxkbmap -layout en,es
-setxkbmap -option 'grp:ctrl_alt_toggle'
-
 # some gnome helpers
 exec --no-startup-id /usr/lib/gnome-settings-daemon/gnome-settings-daemon
 exec --no-startup-id /usr/lib/gnome-settings-daemon/gnome-fallback-mount-helper
@@ -152,7 +149,9 @@ exec --no-startup-id /usr/lib/fingerprint-gui/fingerprint-polkit-agent -d
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id nm-applet
 exec --no-startup-id gnome-sound-applet
-exec xcompmgr
+exec xcompmgr -c
+
+bindsym $mod+space exec /home/alfredormz/.i3/toggle-xkbmap
 
 assign [class="[sS]kype"] 9
 assign [class="[sS]potify"] 8
