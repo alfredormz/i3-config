@@ -6,7 +6,7 @@ fancy_echo() {
   printf "\n%b\n" "$1"
 }
 
-i3_ok=$(dpkg-query -W --showformat='${Status}\n' i3 | grep "install ok installed")
+i3_ok=$(dpkg-query -W --showformat='${Status}\n' i3 2>/dev/null | grep "install ok installed")
 
 if [ "" == $i3_ok ];
 then
