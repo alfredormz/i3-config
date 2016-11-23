@@ -1,7 +1,7 @@
 set $mod Mod4
 set $alt Mod1
 
-font pango: Ubuntu Mono 10
+#font pango: Ubuntu Mono 10
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -16,7 +16,7 @@ bindsym $mod+Shift+q kill
 bindsym Control+space exec dmenu_run
 
 bindsym Control+Shift+1 [class="^.*"] border toggle
-for_window [class="^.*"] border pixel 0
+for_window [class="^.*"] border pixel 1
 
 # change focus
 bindsym $mod+j focus left
@@ -122,7 +122,6 @@ mode "resize" {
         bindsym Left resize shrink width 10 px or 10 ppt
         bindsym Down resize grow height 10 px or 10 ppt
         bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
 
         # back to normal: Enter or Escape
         bindsym Return mode "default"
@@ -143,26 +142,15 @@ bar {
 }
 
 # some gnome helpers
-exec --no-startup-id /usr/lib/gnome-settings-daemon/gnome-settings-daemon
-exec --no-startup-id /usr/lib/gnome-settings-daemon/gnome-fallback-mount-helper
-exec --no-startup-id /usr/lib/fingerprint-gui/fingerprint-polkit-agent -d
-exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id nm-applet
-exec --no-startup-id gnome-sound-applet
-exec xcompmgr -c
 
 bindsym $mod+space exec /home/alfredormz/.i3/toggle-xkbmap
 
 assign [class="[sS]kype"] 9
-assign [class="[sS]potify"] 8
 assign [class="chrome"] 1
-assign [class="hipchat.bin"] 3
+assign [class="slack"] 8
 
-#for_window [class="^Spotify$"] floating enable
-
-exec dropbox start
-#xrandr --output LVDS1 --off
-exec xrandr --output VGA1  --auto --above LVDS1
-exec xrandr --output LVDS1 --auto --below VGA1
-
-#exec feh --bg-fill /home/alfredormz/Dropbox/wallpapers/Forever_by_Shady_S.jpg
+exec QT_STYLE_OVERRIDE=gtk dropbox start
+exec feh --bg-fill /home/alfredormz/Dropbox/828411-hd-wallpaper.jpg
+exec ssh-agent -s
+exec ssh-add
