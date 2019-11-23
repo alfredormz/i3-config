@@ -1,7 +1,7 @@
 set $mod Mod4
 set $alt Mod1
 
-#font pango: Ubuntu Mono 10
+font pango: System San Francisco Display 12
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
