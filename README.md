@@ -14,4 +14,10 @@ This will also install i3
 ```bash
 bash <(wget -qO- https://raw.github.com/alfredormz/i3-config/master/install)
 ```
+Dependencies
+
+compton
+vorbis-tools
+xclip
+feh
 
